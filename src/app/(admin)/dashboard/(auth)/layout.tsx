@@ -1,6 +1,8 @@
-import { Poppins } from 'next/font/google';  
-import "../../../globals.css";  
+import { Poppins } from 'next/font/google';
+import "../../../globals.css";
 import { Metadata } from 'next';
+import { getUser } from '@/lib/auth';
+import { redirect } from 'next/navigation';
 
 const poppins = Poppins({ subsets: ["latin"], weight: "400" });
 
@@ -14,6 +16,13 @@ export default async function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+
+  const { session,user } = await getUser()
+
+  if (session && user.role !== 'superadmin') {
+    return redirect('/dashboard')
+  }
+
   return (
     <html lang="en">
       <body className={poppins.className}>{children}</body>

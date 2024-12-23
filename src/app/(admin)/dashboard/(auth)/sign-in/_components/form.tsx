@@ -26,7 +26,6 @@ function SubmitButton() {
 
 export default function FormSignIn() {
     const [state, formAction] = useFormState(SignIn, initialState)
-    console.log(state);
     return (
         <form action={formAction}>
             <Card className='w-full max-w-sm'>
