@@ -8,8 +8,7 @@ import { Label } from '@/components/ui/label';
 import { ActionResult } from '@/types';
 import { useFormState, useFormStatus } from 'react-dom';
 import { SignIn } from '../lib/actions';
-import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
-import { AlertCircle } from 'lucide-react';
+
 
 const initialState: ActionResult = {
     error: ''
@@ -36,15 +35,6 @@ export default function FormSignIn() {
                     </CardDescription>
                 </CardHeader>
                 <CardContent className='grid gap-4'>
-
-                    {state.error !== "" && (
-                        <Alert variant='destructive'>
-                            <AlertCircle className='h-4 w-4' />
-                            <AlertTitle>Error</AlertTitle>
-                            <AlertDescription>{state.error}</AlertDescription>
-                        </Alert>
-                    )}
-
                     <div className='grid gap-2'>
                         <Label htmlFor='email'>Email</Label>
                         <Input name='email' id='email' type='email' placeholder='abc@gmail.com' />
