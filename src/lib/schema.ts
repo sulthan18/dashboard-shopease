@@ -8,3 +8,7 @@ export const schemaSignIn = z.object({
 export const schemaCategory = z.object({
     name: z.string({ required_error: 'Name is required' }).min(4, { message: 'Name must be at least 4 characters long' }),
 })
+
+export const schemaLocation = z.object({
+    name: z.string({ required_error: 'Location is required' }).min(4, { message: 'Location must be at least 4 characters long' }),
+})
