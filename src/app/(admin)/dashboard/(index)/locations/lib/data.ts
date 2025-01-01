@@ -6,7 +6,7 @@ export async function getLocations() {
 
         return categories
     } catch (error) {
-        console.log(error);
+        (error);
         return []
 
     }
@@ -22,7 +22,7 @@ export async function getLocation(id: string) {
 
         return location
     } catch (error) {
-        console.log(error);
+        (error);
 
         return null
     }

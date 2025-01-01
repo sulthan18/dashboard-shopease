@@ -18,7 +18,7 @@ export default async function EditPage({ params }: EditPageProps) {
         return redirect('/dashboard/categories')
     }
 
-    console.log(data);
+    (data);
 
     return <FormCategory type='EDIT' data={data} />
 }

@@ -26,7 +26,7 @@ export async function postLocation(
             }
         });
     } catch (error) {
-        console.log(error);
+        (error);
         return { error: "Failed to create location" };
     }
 
@@ -56,7 +56,7 @@ export async function updateLocation(
             data: { name: validate.data.name }
         });
     } catch (error) {
-        console.log(error);
+        (error);
         return { error: "Failed to update the location" };
     }
 
@@ -76,7 +76,7 @@ export async function deleteLocation(
             }
         })
     } catch (error) {
-        console.log(error);
+        (error);
         return {
             error: 'Failed to delete data'
         }

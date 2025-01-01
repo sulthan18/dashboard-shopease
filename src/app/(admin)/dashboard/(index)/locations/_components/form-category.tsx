@@ -43,13 +43,13 @@ export default function FormLocation({ data = null, type = 'ADD' }: FormLocation
   const [initialData, setInitialData] = useState<Location | null>(data);
 
   const handleDiscard = (event: React.MouseEvent) => {
-    event.preventDefault(); 
+    event.preventDefault();
 
     if (initialData) {
       setInitialData(data);
     }
 
-    window.history.back(); 
+    window.history.back();
   };
 
   return (

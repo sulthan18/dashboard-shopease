@@ -26,7 +26,7 @@ export async function postCategory(
             }
         });
     } catch (error) {
-        console.log(error);
+        (error);
         return { error: "Failed to create category" };
     }
 
@@ -56,7 +56,7 @@ export async function updateCategory(
             data: { name: validate.data.name }
         });
     } catch (error) {
-        console.log(error);
+        (error);
         return { error: "Failed to update the category" };
     }
 
@@ -76,7 +76,7 @@ export async function deleteCategory(
             }
         })
     } catch (error) {
-        console.log(error);
+        (error);
         return {
             error: 'Failed to delete data'
         }
