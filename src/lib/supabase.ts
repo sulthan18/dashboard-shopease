@@ -5,8 +5,8 @@ const supabaseKey = process.env.NEXT_PUBLIC_SUPABASE_KEY ?? ''
 
 const supabase = createClient(supabaseUrl, supabaseKey)
 
-export const getImageUrl = (name: string) => {
-    const { data } = supabase.storage.from('shopping').getPublicUrl(`public/brands/${name}`)
+export const getImageUrl = (name: string, path: 'brands' | 'products' = 'brands') => {
+    const { data } = supabase.storage.from('shopping').getPublicUrl(`public/${path}/${name}`)
 
     return data.publicUrl
 }
