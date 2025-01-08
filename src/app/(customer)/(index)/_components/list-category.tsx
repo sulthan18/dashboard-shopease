@@ -5,8 +5,6 @@ import Link from 'next/link';
 export default async function ListCategory() {
     const categories = await getCategories()
 
-    console.log(categories);
-
     return (
         <div id="categories" className="flex flex-col gap-[30px]">
             <div className="flex items-center justify-between">

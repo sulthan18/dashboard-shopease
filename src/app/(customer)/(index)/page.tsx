@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Suspense } from 'react'
 import Navbar from './_components/navbar'
 import ListCategory from './_components/list-category'
 import ListProducts from './_components/list-products'
@@ -20,7 +20,7 @@ export default function LandingPage() {
                         <div className="flex flex-col gap-[14px]">
                             <h1 className="font-bold text-[55px] leading-[55px]">Working Faster 10x</h1>
                             <p className="text-lg leading-[34px] text-[#6A7789]">
-                                Discover supercharged performance and cutting-edge features designed to 
+                                Discover supercharged performance and cutting-edge features designed to
                                 streamline your workflow and integrate seamlessly with AI-powered tools.
                             </p>
                         </div>
@@ -85,10 +85,16 @@ export default function LandingPage() {
                 </div>
             </header>
             <section id="content" className="container max-w-[1130px] mx-auto flex flex-col gap-[50px] pt-[50px] pb-[100px]">
-                <ListCategory />
-                <ListProducts title={<>Most Picked <br /> Quality Products</>} />
+                <Suspense fallback={<span>Loading...</span>}>
+                    <ListCategory />
+                </Suspense>
+                <Suspense fallback={<span>Loading...</span>}>
+                    <ListProducts title={<>Most Picked <br /> Quality Products</>} />
+                </Suspense>
                 <ListBrands />
-                <ListProducts title={<>New Releases <br /> From Official Stores</>} />
+                <Suspense fallback={<span>Loading...</span>}>
+                    <ListProducts title={<>New Releases <br /> From Official Stores</>} />
+                </Suspense>
             </section>
         </>
     )
