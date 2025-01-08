@@ -45,3 +45,7 @@ export const schemaProduct = z.object({
 export const schemaProductEdit = schemaProduct.extend({
     id: z.number({ required_error: "Product Id is required" })
 }).omit({ images: true })
+
+export const schemaSignUp = schemaSignIn.extend({
+    name: z.string({ required_error: "Name is required" }).min(4, { message: "Name must be at least 4 characters long" })
+})
