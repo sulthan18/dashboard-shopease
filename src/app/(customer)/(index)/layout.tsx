@@ -11,7 +11,7 @@ const spectral = Spectral({
     subsets: ['latin'],
 });
 
-export default function AuthRootLayout({
+export default function LandingRootLayout({
     children,
 }: Readonly<{
     children: React.ReactNode
