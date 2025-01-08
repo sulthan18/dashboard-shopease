@@ -91,7 +91,9 @@ export default function LandingPage() {
                 <Suspense fallback={<span>Loading...</span>}>
                     <ListProducts title={<>Most Picked <br /> Quality Products</>} />
                 </Suspense>
-                <ListBrands />
+                <Suspense fallback={<span>Loading...</span>}>
+                    <ListBrands />
+                </Suspense>
                 <Suspense fallback={<span>Loading...</span>}>
                     <ListProducts title={<>New Releases <br /> From Official Stores</>} />
                 </Suspense>
