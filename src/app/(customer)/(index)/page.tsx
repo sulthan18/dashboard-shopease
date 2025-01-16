@@ -13,7 +13,7 @@ export default function LandingPage() {
                     <div className="flex flex-col gap-[30px]">
                         <div className="flex items-center gap-[10px] p-[8px_16px] rounded-full bg-white w-fit">
                             <div className="w-[22px] h-[22px] flex shrink-0">
-                                <img src="assets/icons/crown.svg" alt="icon" />
+                                <img src="/assets/icons/crown.svg" alt="icon" />
                             </div>
                             <p className="font-semibold text-sm">Most Popular 100th Product in Shopease</p>
                         </div>
@@ -30,16 +30,16 @@ export default function LandingPage() {
                         </div>
                     </div>
                     <div className="w-[588px] h-[360px] flex shrink-0 overflow-hidden relative">
-                        <img src="assets/banners/mba13-m2-digitalmat-gallery-1-202402-Photoroom 2.png" className="object-contain" alt="icon" />
+                        <img src="/assets/banners/mba13-m2-digitalmat-gallery-1-202402-Photoroom 2.png" className="object-contain" alt="icon" />
                         <div className="absolute top-[60%] bg-white p-[14px_16px] rounded-3xl flex items-center gap-[10px]">
                             <div className="w-12 h-12 flex shrink-0 rounded-full items-center justify-center bg-[#FFC736] overflow-hidden">
-                                <img src="assets/icons/code-circle.svg" className="w-6 h-6" alt="icon" />
+                                <img src="/assets/icons/code-circle.svg" className="w-6 h-6" alt="icon" />
                             </div>
                             <p className="font-semibold text-sm">Bonus Mac OS <br /> Capitan Pro</p>
                         </div>
                         <div className="absolute right-0 top-[30%] bg-white p-[14px_16px] rounded-3xl flex flex-col items-center gap-[10px]">
                             <div className="w-12 h-12 flex shrink-0 rounded-full items-center justify-center bg-[#FFC736] overflow-hidden">
-                                <img src="assets/icons/star-outline.svg" className="w-6 h-6" alt="icon" />
+                                <img src="/assets/icons/star-outline.svg" className="w-6 h-6" alt="icon" />
                             </div>
                             <p className="font-semibold text-sm text-center">Include <br /> Warranty</p>
                         </div>
@@ -48,7 +48,7 @@ export default function LandingPage() {
                 <div className="container max-w-[1130px] mx-auto flex items-center justify-center gap-10 mt-[50px]">
                     <div className="flex items-center gap-[10px]">
                         <div className="w-[50px] h-[50px] flex shrink-0 rounded-full border-[5px] border-white overflow-hidden">
-                            <img src="assets/photos/p1.png" className="w-full h-full object-cover" alt="photo" />
+                            <img src="/assets/photos/p1.png" className="w-full h-full object-cover" alt="photo" />
                         </div>
                         <div className="flex flex-col gap-[2px]">
                             <p className="font-semibold text-sm leading-[22px]">Awesome product!</p>
@@ -57,7 +57,7 @@ export default function LandingPage() {
                     </div>
                     <div className="flex items-center gap-[10px]">
                         <div className="w-[50px] h-[50px] flex shrink-0 rounded-full border-[5px] border-white overflow-hidden">
-                            <img src="assets/photos/p2.png" className="w-full h-full object-cover" alt="photo" />
+                            <img src="/assets/photos/p2.png" className="w-full h-full object-cover" alt="photo" />
                         </div>
                         <div className="flex flex-col gap-[2px]">
                             <p className="font-semibold text-sm leading-[22px]">Money saver 20%</p>
@@ -66,7 +66,7 @@ export default function LandingPage() {
                     </div>
                     <div className="flex items-center gap-[10px]">
                         <div className="w-[50px] h-[50px] flex shrink-0 rounded-full border-[5px] border-white overflow-hidden">
-                            <img src="assets/photos/p3.png" className="w-full h-full object-cover" alt="photo" />
+                            <img src="/assets/photos/p3.png" className="w-full h-full object-cover" alt="photo" />
                         </div>
                         <div className="flex flex-col gap-[2px]">
                             <p className="font-semibold text-sm leading-[22px]">I love the warranty</p>
@@ -75,7 +75,7 @@ export default function LandingPage() {
                     </div>
                     <div className="flex items-center gap-[10px]">
                         <div className="w-[50px] h-[50px] flex shrink-0 rounded-full border-[5px] border-white overflow-hidden">
-                            <img src="assets/photos/p4.png" className="w-full h-full object-cover" alt="photo" />
+                            <img src="/assets/photos/p4.png" className="w-full h-full object-cover" alt="photo" />
                         </div>
                         <div className="flex flex-col gap-[2px]">
                             <p className="font-semibold text-sm leading-[22px]">Big deals ever!</p>
