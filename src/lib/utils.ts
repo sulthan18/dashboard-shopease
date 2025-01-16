@@ -7,8 +7,8 @@ export function cn(...inputs: ClassValue[]) {
 }
 
 export function rupiahFormat(value: number) {
-  return Intl.NumberFormat('id-ID', { 
-    style: 'currency', 
+  return Intl.NumberFormat('id-ID', {
+    style: 'currency',
     currency: 'IDR',
     minimumFractionDigits: 0,
     maximumFractionDigits: 0
@@ -21,4 +21,17 @@ export function dateFormat(date: Date | null, format = 'DD MMMM YYYY') {
   }
 
   return dayjs(date).format(format)
+}
+
+export function generateRandomString(length: number) {
+  let result = ''
+
+  const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789'
+  const charactersLength = characters.length
+
+  for (let i = 0; i < length; i++) {
+    result += characters.charAt(Math.floor(Math.random() * charactersLength))
+  }
+
+  return result
 }
