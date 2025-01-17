@@ -14,7 +14,7 @@ export async function Logout(
 
     if (!session) {
         return {
-            error: 'Unaoturhized'
+            error: 'Unauthorized'
         }
     }
 

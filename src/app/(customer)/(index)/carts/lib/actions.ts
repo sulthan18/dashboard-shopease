@@ -1,6 +1,6 @@
 "use server"
 
-import { getUser } from "@/lib/auth";
+import { getUser, lucia } from "@/lib/auth";
 import { schemaShippingAddress } from "@/lib/schema";
 import { ActionResult, TCart } from "@/types";
 import { redirect } from "next/navigation";
@@ -9,6 +9,29 @@ import { generateRandomString } from "@/lib/utils";
 import { PaymentRequestParameters, PaymentRequest } from "xendit-node/payment_request/models";
 import xenditClient from "@/lib/xendit";
 import { Prisma } from "@prisma/client";
+import { cookies } from "next/headers";
+
+export async function Logout(
+    _: unknown,
+    formData: FormData
+): Promise<ActionResult> {
+
+    const { session } = await getUser()
+
+    if (!session) {
+        return {
+            error: 'Unauthorized'
+        }
+    }
+
+    await lucia.invalidateSession(session.id)
+
+    const sessionCookie = lucia.createBlankSessionCookie()
+
+    cookies().set(sessionCookie.name, sessionCookie.value, sessionCookie.attributes)
+
+    return redirect('/sign-in')
+}
 
 export async function storeOrder(
     _: unknown,
