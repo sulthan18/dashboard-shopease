@@ -1,4 +1,6 @@
-import React from 'react'
+'use client';
+
+import React from 'react';
 import {
     Breadcrumb,
     BreadcrumbItem,
@@ -6,12 +8,19 @@ import {
     BreadcrumbList,
     BreadcrumbPage,
     BreadcrumbSeparator,
-} from "@/components/ui/breadcrumb"
-import { Input } from "@/components/ui/input"
+} from "@/components/ui/breadcrumb";
+import { Input } from "@/components/ui/input";
 import Link from 'next/link';
 import { Search } from 'lucide-react';
+import { usePathname } from 'next/navigation';
 
 export default function Header() {
+    const pathname = usePathname();
+    const pathSegments = pathname.split('/').filter(segment => segment !== '');
+
+    // Jika path dimulai dengan "dashboard", kita bisa menghilangkan segmen "dashboard" pertama
+    const filteredSegments = pathSegments[0] === 'dashboard' ? pathSegments.slice(1) : pathSegments;
+
     return (
         <header className="sticky top-0 z-30 flex h-14 items-center gap-4 border-b bg-background px-4 sm:static sm:h-auto sm:border-0 sm:bg-transparent sm:px-6">
             <Breadcrumb className="hidden md:flex">
@@ -21,10 +30,25 @@ export default function Header() {
                             <Link href="/">Dashboard</Link>
                         </BreadcrumbLink>
                     </BreadcrumbItem>
-                    <BreadcrumbSeparator />
-                    <BreadcrumbItem>
-                        <BreadcrumbPage>Home</BreadcrumbPage>
-                    </BreadcrumbItem>
+                    {filteredSegments.map((segment, index) => {
+                        const href = `/dashboard/${filteredSegments.slice(0, index + 1).join('/')}`;
+                        const isLast = index === filteredSegments.length - 1;
+
+                        return (
+                            <React.Fragment key={href}>
+                                <BreadcrumbSeparator />
+                                <BreadcrumbItem>
+                                    {isLast ? (
+                                        <BreadcrumbPage>{segment}</BreadcrumbPage>
+                                    ) : (
+                                        <BreadcrumbLink asChild>
+                                            <Link href={href}>{segment}</Link>
+                                        </BreadcrumbLink>
+                                    )}
+                                </BreadcrumbItem>
+                            </React.Fragment>
+                        );
+                    })}
                 </BreadcrumbList>
             </Breadcrumb>
             <div className="relative ml-auto flex-1 md:grow-0">
@@ -36,5 +60,5 @@ export default function Header() {
                 />
             </div>
         </header>
-    )
+    );
 }
