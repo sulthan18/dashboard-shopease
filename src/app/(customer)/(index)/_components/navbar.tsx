@@ -1,14 +1,14 @@
-import { TooltipProvider } from '@/components/ui/tooltip'; // Pastikan path-nya sesuai dengan struktur proyek Anda
 import { getUser } from '@/lib/auth';
 import Link from 'next/link';
 import React from 'react';
 import FormLogout from './form-logout';
+import { TooltipProvider } from '@/components/ui/tooltip'; 
 
 export default async function Navbar() {
-    const { session, user } = await getUser();
+    const { session, user } = await getUser()
 
     return (
-        <TooltipProvider> {/* Membungkus navbar dengan TooltipProvider */}
+        <TooltipProvider>
             <nav className="container max-w-[1130px] mx-auto flex items-center justify-between bg-[#0D5CD7] p-5 rounded-3xl">
                 <div className="flex items-center shrink-0">
                     <img src="/assets/logos/logo.svg" alt="icon" className="w-8 h-8 mr-2 ml-5" />
@@ -32,7 +32,7 @@ export default async function Navbar() {
                     <Link href="/carts">
                         <div className="w-12 h-12 flex shrink-0">
                             <img src="/assets/icons/cart.svg" alt="icon" />
-                        </div>
+                    </div>
                     </Link>
                     {session && user.role === 'customer' ? (
                         <>
@@ -40,7 +40,6 @@ export default async function Navbar() {
                             <div className="w-[48px] h-[48px] flex shrink-0 rounded-full p-1 border border-[#E5E5E5] overflow-hidden">
                                 <img src="/assets/photos/p4.png" className="w-full h-full object-cover rounded-full" alt="photo" />
                             </div>
-                            {/* Tombol Logout */}
                             <FormLogout />
                         </>
                     ) : (
